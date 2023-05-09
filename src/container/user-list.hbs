@@ -1,0 +1,63 @@
+<div>
+    {{> space}}
+    {{> title titleText="User listsssss"}}
+    {{> line}}
+
+    <ul>
+        {{#each data.userList}}
+        <li>
+            <div>ID: {{id}}</div>
+            <div>Name: {{name}}</div>
+            
+            {{#if isAdmin}}
+                <div style="color: darkgreen;">Admin ?: <b>YES</b></div>
+                {{> button info="PRESS FB"}}
+            {{else}}
+                <div style="color: rgb(247, 11, 11);">Admin ?: no</div>
+            {{/if}}
+        </li>
+        {{/each}}
+    </ul>
+    
+    <br>
+
+    <ul>
+        {{#each data.userList}}
+        <li>
+            <div>ID: {{id}}
+            {{#if isAdmin}}
+                <div style="color: darkgreen;"><b>{{name}}</b></div>
+                {{> button info="Send report"}}
+            {{/if}}
+            {{#unless isAdmin}}
+                <div style="color: rgb(247, 11, 11);">{{name}}</div>
+            {{/unless}}
+            {{#if balance includeZero=true}}
+                <p>Ваш баланс: {{balance}}</p>
+            {{/if}}
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+
+    {{> line}}
+    {{> title titleText="User cards"}}
+    <ul>
+        {{#each data.userList}}
+        <li>
+            {{> user data=this}}
+        </li>
+        {{/each}}
+    </ul>
+
+    {{> line}}
+    <div>
+        {{!-- {{> user id=data.userList.[1].id name=data.userList.[1].name isAdmin=data.userList.[1].isAdmin balance=data.userList.[1].balance}} --}}
+        {{> user data=data.userList.[1]}}
+    </div>
+
+    {{> line}}
+    <div>
+        {{> user data=data.userList.[0]}}
+    </div>
+</div>

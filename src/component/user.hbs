@@ -1,0 +1,15 @@
+{{#with data}}
+
+<div>ID: {{id}}
+{{#if isAdmin}}
+    <div style="color: darkgreen;"><b>{{name}}</b></div>
+    {{> button info="Send report"}}
+{{/if}}
+{{#unless isAdmin}}
+    <div style="color: rgb(247, 11, 11);">{{name}}</div>
+{{/unless}}
+{{#if balance includeZero=true}}
+    <p>Ваш баланс: {{balance}}</p>
+{{/if}}
+    </div>
+{{/with}}
