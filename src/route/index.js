@@ -38,4 +38,28 @@ router.get('/ul', function (req, res) {
   })
 })
 
+router.get('/pr', function (req, res) {
+  res.render('products', {
+    layout: 'default',
+    product: {
+      name: 'Корм для риб',
+      cost: 72.5,
+      img: 'fish.png',
+      isAvailable: false,
+    },
+  })
+})
+
+router.get('/uinfo', function (req, res) {
+  res.render('uinfo', {
+    layout: 'default',
+    user: {
+      name: 'Іван',
+      email: 'ivan@example.com',
+      phone: '123-456-7890',
+      balance: 0,
+    },
+  })
+})
+
 module.exports = router

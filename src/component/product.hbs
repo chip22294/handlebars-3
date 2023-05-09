@@ -1,0 +1,24 @@
+{{!-- <div>
+<button>Купити</button>
+<p>{{title}}</p>
+<span>{{price}}<span>
+<img src="{{img}}" alt="{{name}}">
+</div> --}}
+
+{{!-- <div>
+<p>{{title}}</p>
+<span>{{price}}<span>
+<img src="{{img}}" alt="{{name}}">
+{{#if isAvailable}}
+<button>Купити</button>
+{{/if}}
+</div> --}}
+
+<div>
+<p>{{title}}</p>
+<span>{{price}}<span>
+<img src="{{img}}" alt="{{name}}">
+{{#unless isAvailable}}
+<button>Немає в наявності</button>
+{{/unless}}
+</div>

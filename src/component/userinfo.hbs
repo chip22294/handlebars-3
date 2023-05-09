@@ -1,0 +1,14 @@
+{{!-- <div class="userinfo">
+<h2>{{name}}</h2>
+<p>Email: {{email}}</p>
+<p>Телефон: {{phone}}</p>
+</div> --}}
+
+<div class="user-info">
+<h2>{{name}}</h2>
+<p>Email: {{email}}</p>
+<p>Телефон: {{phone}}</p>
+{{#if balance includeZero=true}}
+<p>Успішність: {{balance}}</p>
+{{/if}}
+</div>
